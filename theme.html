@@ -1577,6 +1577,7 @@
 	  });
 	});
 
+	{block:IfInstagramID}
 	$(document).ready(function() {
 		$('#slideshow').embedagram({
 		  instagram_id: {text:Instagram ID},
@@ -1584,7 +1585,9 @@
 		  limit: 4
 		});
 	});
+	{/block:IfInstagramID}
 
+	{block:ifDribbbleUsername}
 	$(document).ready(function getDribbbleShots() {
 		$.jribbble.getShotsByPlayerId("{text:Dribbble Username}", function(playerShots) {
 			var html = [];
@@ -1599,12 +1602,7 @@
 			per_page: 1
 		})
 	});
-
-	$('.menu-toggle').on('click', function(e) {
-    $('.top-nav').toggleClass("active");
-    $(this).find('i').toggleClass('fa-bars fa-times')
-    e.preventDefault();
-  });
+	{/block:ifDribbbleUsername}
 
   $(".share-button").click(function() {
 		var id = $(this).attr('rel');
